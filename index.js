@@ -9,7 +9,7 @@ const user = require("./routes/user");
 const auth = require("./routes/auth");
 
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: ['http://localhost:3001','https://pethelp.onrender.com'],
   credentials: true
 }));
 const cookieParser = require('cookie-parser');
