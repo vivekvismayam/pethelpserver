@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     return res.status(400).send({ error: "Invalid Email or Password" });
 
   const token = user.generateAuthToken();
-  res.cookie('x-auth-token',token,{httpOnly:true,secure:false,path:'/'});
+  res.cookie('x-auth-token',token,{httpOnly:true,secure:false,path:'/',domain:process.env.ALLOWED_CORS});
   return res.status(200).send({ 'authorization':true,name:user.name,isAdmin:user.isAdmin });
 });
 //logout
